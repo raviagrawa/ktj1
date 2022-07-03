@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>NAVBAR</title>
+</head>
+
+<style> 
+body{
+    color:black;
+    background-color: chartreuse;
+    scroll-behavior: smooth;
+    
+}
+*{
+    scroll-behavior: smooth;
+    display: flexbox;
+}
+
+a{
+    text-decoration:none;
+    
+    padding:30px;
+    margin:5px;
+    float:left;
+    display: flexbox;
+    color:black;
+    font-weight: bold;
+    font-size:larger;
+    
+
+
+
+    
+}
+.nav{
+    background-color: aqua;
+   
+    padding:5px;
+    position:fixed;
+     top:0;
+     overflow:hidden;
+     width:100%;
+
+    
+}
+.nav a:hover{
+    
+    color:blue;
+    border-radius: 5px;
+
+    
+    border:2px;
+    border-style:solid;
+    cursor: pointer;
+
+}
+.nav a:active{
+    background-color: blueviolet;
+}
+
+.logo{
+
+    
+     float:left;
+    padding:5px;
+    margin:5px;
+    background-color: aqua;
+    
+    
+
+}
+
+
+#NAME{
+    text-align: center;
+    color:yellow;
+}
+ 
+.intro{
+    background-color:black;
+}
+.childintro{
+    float:left;
+    width:50%;
+    
+}
+.shopname{
+    padding:40px;
+    border:2px;
+    margin:50px;
+    color:yellow;
+    font-size:30px;
+
+}
+.card{
+    background-color: blueviolet;
+    z-index: 0.5;
+    
+    border:5px;
+    
+    border-color: black;
+    float:left;
+    width:80%;
+    padding:5%;
+    border-radius:5px;
+    border-color:blueviolet;
+
+
+    
+}
+.card1{
+    background-color: gainsboro;
+    z-index: 0.5;
+    
+    border:5px;
+    border-radius:4px;
+    border-color: black;
+    float:left;
+    width:35%;
+    align-items: center;
+    padding:3%;
+    margin:4%;}
+    
+h2{
+    text-align: center;
+
+}
+h3,h4{
+    text-align: center;
+}
+.int{
+    text-align:center;
+}
+
+PRE{
+    font-size: large;font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+input[type=text]{
+    width:80%;
+   margin-left:50px;
+    font-size: 15px;
+    float: left;
+    border:2px;
+
+}
+button{
+    background-color:red;
+    COLOR:WHITE;
+    WIDTH:100PX;
+    height:30px;
+}
+BUTTON:HOVER{
+    background-color: rgb(0, 139, 93);
+}
+BUTTON:active{
+    background-color: blue;
+}
+input[type=text]{
+    color:blue;
+    background-color: rgb(245, 244, 220);
+}
+
+
+  .foter{  float:left;
+     width:33%;
+     display: flexbox;
+     border:3px;
+     background-color: black;
+     color:white;
+     height:300px;
+}
+.top{
+    position:fixed;
+    bottom: 0;
+    right:-200px;
+
+}
+h3{
+    color:white;
+}
+
+
+  </style>
+<body>
+
+   
+   <div class ="nav">
+    <img  class ="logo" src="data:image/png;base64,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" alt ="logo" style = "width:10%; border-radius: 50%;">
+   <span> <a href ="#HOME">HOME</a></span>
+   <span> <a href ="#bestsellingbook">BEST SELLING BOOK</a></span>
+   <span><a href= "#recommendate">RECOMMENATION </a></span>
+   <span><a href ="#reviews">REVIEWS</a></span>
+   <span><a href ="#reviewform">CONTACT FORM</a></span>
+   </div>
+   <h1 id ="HOME"></h1>
+   <br><br><br><br>
+   <h1 style ="font-size: 50px; font-weight:bold; font-family:cursive;text-align: center;">RA BOOK STORE </h1>
+    <div class="intro">
+        <div class ="childintro">
+            <div class ="shopname"><pre style="font-size: 30px; color:chartreuse; text-align: center;">Welcome  To Our </pre>
+ <pre style="font-size: 45px; color:yellow; text-align: center;">RA BookStore  Webpage</pre>
+  <pre style="font-size: 20px; color:white; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">We have wide range 
+     of books , from almost
+     every genres within 
+     resonable prices 
+    </pre>
+         </div>
+        </div>
+        <DIV class ="child-intro">
+            <div class ="coverpic">
+                
+   <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3BlbiUyMGJvb2t8ZW58MHx8MHx8&w=1000&q=80" alt="coverpic" style ="width: 50%;">
+
+            </div>
+        </DIV>
+    </div>
+    <pre>             </pre>
+   
+<div class="bestsb"  style="background-color: bisque;">
+    <h2> BEST SELLING BOOK</h2>
+    <h4> Here are some best selling books all the time </h4>
+    <div class ="card1">
+    <div class ="card">
+        <h3>  NON FICTION BOOK</h3>
+        <img  class ="image" src ="https://images-na.ssl-images-amazon.com/images/I/418ky++EMuL._SX460_BO1,204,203,200_.jpg" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+    
+        
+        <pre>          One Day, Life Will Change: A story 
+         of love and inspiration to win life
+        when it hits you hard :By Saranya Umakanthan
+        BOOK PRICE:500 RS </pre>
+       <button type ="button">ADD+</button>
+</div>
+</div>
+ 
+<div class ="card1">
+    <div class ="card">
+        <h3> GENERAL</h3>
+        <img  class ="image" src ="https://rukminim1.flixcart.com/image/416/416/kcz4rrk0/book/2/6/6/toppers-study-hacks-original-imaftzpwegagbhtu.jpeg?q=70" ALT ="BOOK_IMAGE" style="padding-left:10px; margin-left:50px; WIDTH:65%;">
+       
+        <PRE class="int">TOPPERS' STUDY HACKS  
+            (English, Paperback, Agarwal Avinash)
+            BY :Avinash Agarwal 
+ 
+            BOOK PRICE:187 RS </PRE>
+            <button type ="button" >ADD+</button>
+    </div>
+</div>
+<div class ="card1">
+    <div class ="card">
+        <h3> BIOGRAPHY </h3>
+        <img  class ="image" src ="https://rukminim1.flixcart.com/image/416/416/juk4gi80/book/4/6/6/wings-of-fire-original-imaffmk4gx5pxqvf.jpeg?q=70" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+        
+        
+        <PRE class="int"> Wings of Fire 50 Edition 
+             (English, Paperback, Tiwari Arun)
+           By : Arun Tiwari
+
+             BOOK PRICE:280 RS </PRE>
+            <button type ="button">ADD+</button>
+    </div>
+
+    </div>
+   
+     <div class ="card1">
+    <div class ="card">
+
+        <h3>  SELF-HELP BOOK </h3>
+        <img  class ="image" src ="https://images-eu.ssl-images-amazon.com/images/I/51QnuLIY2uL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" ALT ="BOOK_IMAGE" style="padding:20px; margin-left:30px; width:60%">
+        
+        
+        <PRE class="int">The Power of Your Subconscious Mind
+            (English, Paperback,  Murphy Joseph)
+            By:Joseph Murphy  
+
+             BOOK PRICE:185 RS </PRE>
+             <button type ="button">ADD+</button>
+    </div>
+    </div>
+    <h1 id="bestsellingbook"></h1>
+</div>
+
+   <div class="recommandation" >
+
+   
+   <h2  >RECOMMENDATION</h2>
+   <h4> There are some recommendate to you </h4>
+   <form class="example" action="/action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+
+  </form>
+  <div class ="card1">
+    <div class ="card">
+        <h3> NON FICTION BOOK </h3>
+        <img  class ="image" src ="https://images-na.ssl-images-amazon.com/images/I/418ky++EMuL._SX460_BO1,204,203,200_.jpg" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+    
+        
+        <pre>          One Day, Life Will Change: A story 
+         of love and inspiration to win life
+        when it hits you hard :By Saranya Umakanthan
+         BOOK PRICE:500 RS </pre>
+        <button type ="button">ADD+</button>
+    </div>
+</div>
+
+    
+    <div class ="card1">
+    <div class ="card">
+        <h3>General</h3>
+        <img  class ="image" src ="https://rukminim1.flixcart.com/image/416/416/kcz4rrk0/book/2/6/6/toppers-study-hacks-original-imaftzpwegagbhtu.jpeg?q=70" ALT ="BOOK_IMAGE" style="padding-left:10px; margin-left:50px; WIDTH:65%;">
+       
+        <PRE class="int">TOPPERS' STUDY HACKS  
+            (English, Paperback, Agarwal Avinash)
+            BY :Avinash Agarwal 
+ 
+            BOOK PRICE:187 RS </PRE>
+            <button type ="button">ADD+</button>
+    </div>
+</div>
+  
+<div class ="card1">
+    <div class ="card">
+        <h3> BIOGRAPHY</h3>
+        <img  class ="image" src ="https://rukminim1.flixcart.com/image/416/416/juk4gi80/book/4/6/6/wings-of-fire-original-imaffmk4gx5pxqvf.jpeg?q=70" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+        
+        
+        <PRE class="int"> Wings of Fire 50 Edition 
+             (English, Paperback, Tiwari Arun)
+           By : Arun Tiwari
+
+             BOOK PRICE:280 RS </PRE>
+            <button type ="button">ADD+</button>
+    </div>
+    </div>
+    <div class ="card1">
+        <div class ="card">
+    
+            <h3> SELF-HELP BOOK</h3>
+            <img  class ="image" src ="https://images-eu.ssl-images-amazon.com/images/I/51QnuLIY2uL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" ALT ="BOOK_IMAGE" style="padding:20px; margin-left:30px; width:60%">
+            
+            
+            <PRE class="int">The Power of Your Subconscious Mind
+                (English, Paperback,  Murphy Joseph)
+                By:Joseph Murphy  
+    
+                  BOOK PRICE:185 RS </PRE>
+                 <button type ="button" STTLE="TOP:-10PX;">ADD+</button>
+        </div>
+        </div>
+        <h2     id="recommendate" ></h2>
+   </div>
+   <div class ="review" >
+    <h2  > REVIEWS</h2>
+    
+    <h2> Team </h2>
+    </div>
+
+
+    
+    <div class ="card1">
+        <div class ="card">
+            <h3> MEMBER</h3>
+            <img  class ="image" src ="https://www.w3schools.com/howto/img_avatar.png" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+            
+            
+            <PRE class="int">
+                 member name :xyz rating:4
+                reviews: there are
+                 some good review
+                  for the team 
+                  members</PRE>
+        </div>
+        </div>
+        <div class ="card1">
+            <div class ="card">
+                <h3> MEMBER</h3>
+                <img  class ="image" src ="https://www.w3schools.com/howto/img_avatar.png" ALT ="BOOK_IMAGE" style="padding:10px; margin:10px; width:90%">
+                
+                
+                <PRE class="int">
+                     member name :xyz   rating:1
+                    reviews: there are
+                     some good review
+                      for the team members</PRE>
+            </div>
+            <h2 id="reviews" style="scroll-behavior:smooth;" ></h2>
+           
+            </div>
+            
+            <h1> CONTACT FORM </h1>
+            
+            <form action ="/action_page.php"   class="part" style ="background-color:cornflowerblue; display:flexbox; margin:20px; border-radius: 3px; ">
+                <div><hr>
+              <DIV clss="parts" style="width:50%; float:left;">
+                <label for ="name">NAME</label><br>
+                <INPUT type="text" placeholder="Enter your name "name="name" id="name" style="width:200px; height:20px; padding:5px; margin:5px;">
+                    <br><br>
+                    <br>
+                    <label for ="email">EMAIL</label>
+                    <br>
+                    <input type="email" id="email" placeholder="abc@gmail.com" name ="email "  style ="width:200px; height:20px; padding:5px; margin-left:5px;">
+                    <br>
+                    <label  for ="rating">*RATE</label><br>
+                    <select id="rating" style ="width:50px; height:30px;">
+                        <option value ="1">1</option>
+                        <option value ="2">2</option>
+                        <option value ="3">3</option>
+                        <option value ="4">4</option>
+                        <option value ="5">5</option>
+                    </select>
+              </DIV>
+                <div class ="parts" style="width:50%; float:left;"  >
+                    <label for="revi" >REVIEWS</label><br>
+                   
+                 <INPUT TYPE ="TEXT" name="review" id="revi" placeholder="reviews" style ="width:80%; height: 100px; padding:5px; margin-left:5px;">
+                    <br><br><br><br><br><br>
+                    <br>
+                    
+                    <button type="submit" style="width:120px;">SUBMIT</button>
+                    <button type="reset" style="width:120px; MARGIN-LEFT:100PX;">RESET</button>
+                </div>
+                <h1 ID="reviewform" style="scroll-behavior: smooth;"></h1>
+               </div>
+
+               
+            <hr> </form>
+        <div class="top">
+            <a   href="#HOME"><img src ="data:image/png;base64,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" alt ="top" style ="width:10%" ></a>
+        </div>
+               </form>
+                <div class="foot"  style="background-color: black; ">
+                    <footer>
+                        <section class="foter">
+                          <pre>                           ALL rights reserved
+                             By RAVI AGRTAWAL</pre>
+                        </section >
+                        <section class="foter">
+                           <pre>                Powered By
+                            RAVI AGRTAWAL</pre>
+                        </section>
+
+   <section  class="foter">
+     <div class ="icon">
+        
+        <a href ="https://www.facebook.com/"   target="_blank"> <img src="https://img.icons8.com/fluency-systems-regular/2x/facebook-circled--v3.gif" atl ="facebook" style="width:15%;" ></a>
+        <a href ="https://www.instagram.com/"  target="_blank" > <img src="https://img.icons8.com/ios/2x/instagram-new--v2.gif"     atl ="instagram" style="width:15%;"> </a>
+        <a  href ="https://www.linkedin.com/"  target="_blank" > <img src="https://img.icons8.com/ios/2x/linkedin-circled--v5.gif"    atl ="facebook"  style="width:15%; margin-top:0;"></a>
+        
+        
+        </div> 
+   </section>
+                    </footer>
+                </div>
+        
+            
+   
+</body>
+</html>
